@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realm Wreckers - Realm Wreckers.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="/" class="logo anim-fade-down fade-in-scroll">
+                    <img src="/images/logo/realm_wreckers_logo.png" alt="Realm Wreckers Logo" class="logo-img">
+                </a>
+            </div>
+            <div class="header-spacer"></div>
+            <div class="header-socials anim-fade-down fade-in-scroll delay-400">
+                <a href="https://youtube.com" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="https://reddit.com" target="_blank" class="social-icon"><i class="fab fa-reddit"></i></a>
+                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://tiktok.com" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                <a href="https://twitch.com" target="_blank" class="social-icon"><i class="fab fa-twitch"></i></a>
+                <a href="https://discord.gg" target="_blank" class="social-icon"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-background">
+            <img src="/images/hero-tank.webp" alt="Realm Wreckers Battle" class="hero-bg-image">
+        </div>
+
+        <!-- Play Button -->
+        <div class="hero-play-button">
+            <button class="play-btn" data-youtube-id="R0jyFob9UQQ" aria-label="Play Trailer">
+                <i class="fas fa-play"></i>
+            </button>
+        </div>
+
+        <!-- Hero Bottom Content -->
+        <div class="hero-bottom-content">
+            <div class="hero-actions anim-fade-up fade-in-scroll delay-400">
+                <a href="https://store.steampowered.com/" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-steam"></i>
+                    <span>WISHLIST NOW!</span>
+                </a>
+                <a href="https://www.kickstarter.com/" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-kickstarter-k"></i>
+                    <span>FOLLOW US</span>
+                </a>
+            </div>
+
+            <div class="hero-newsletter anim-fade-left fade-in-scroll delay-800">
+                <h3 class="newsletter-title">SUBSCRIBE TO<br>OUR NEWSLETTER</h3>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" name="email" placeholder="Email" class="newsletter-input" required>
+                    <div class="newsletter-actions">
+                        <button type="submit" class="newsletter-submit">SUBSCRIBE</button>
+                        <label class="newsletter-terms">
+                            <input type="checkbox" name="terms" required>
+                            <span>I accept the <a href="/privacy">Privacy Policy</a></span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Mountain SVG Divider -->
+        <div class="shape-divider shape-divider-bottom">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path class="shape-fill" opacity="0.33"
+                    d="M473,67.3c-203.9,88.3-263.1-34-320.3,0C66,119.1,0,59.7,0,59.7V0h1000v59.7 c0,0-62.1,26.1-94.9,29.3c-32.8,3.3-62.8-12.3-75.8-22.1C806,49.6,745.3,8.7,694.9,4.7S492.4,59,473,67.3z" />
+                <path class="shape-fill" opacity="0.66"
+                    d="M734,67.3c-45.5,0-77.2-23.2-129.1-39.1c-28.6-8.7-150.3-10.1-254,39.1 s-91.7-34.4-149.2,0C115.7,118.3,0,39.8,0,39.8V0h1000v36.5c0,0-28.2-18.5-92.1-18.5C810.2,18.1,775.7,67.3,734,67.3z" />
+                <path class="shape-fill"
+                    d="M766.1,28.9c-200-57.5-266,65.5-395.1,19.5C242,1.8,242,5.4,184.8,20.6C128,35.8,132.3,44.9,89.9,52.5C28.6,63.7,0,0,0,0 h1000c0,0-9.9,40.9-83.6,48.1S829.6,47,766.1,28.9z" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section id="welcome" class="welcome-section">
+        <div class="welcome-video-bg">
+            <!-- Video removed for static background -->
+        </div>
+        <div class="welcome-overlay"></div>
+
+        <!-- Mountain SVG Divider Top -->
+        <div class="shape-divider shape-divider-top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path class="shape-fill" opacity="0.33"
+                    d="M473,67.3c-203.9,88.3-263.1-34-320.3,0C66,119.1,0,59.7,0,59.7V0h1000v59.7 c0,0-62.1,26.1-94.9,29.3c-32.8,3.3-62.8-12.3-75.8-22.1C806,49.6,745.3,8.7,694.9,4.7S492.4,59,473,67.3z" />
+                <path class="shape-fill" opacity="0.66"
+                    d="M734,67.3c-45.5,0-77.2-23.2-129.1-39.1c-28.6-8.7-150.3-10.1-254,39.1 s-91.7-34.4-149.2,0C115.7,118.3,0,39.8,0,39.8V0h1000v36.5c0,0-28.2-18.5-92.1-18.5C810.2,18.1,775.7,67.3,734,67.3z" />
+                <path class="shape-fill"
+                    d="M766.1,28.9c-200-57.5-266,65.5-395.1,19.5C242,1.8,242,5.4,184.8,20.6C128,35.8,132.3,44.9,89.9,52.5C28.6,63.7,0,0,0,0 h1000c0,0-9.9,40.9-83.6,48.1S829.6,47,766.1,28.9z" />
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="welcome-content fade-in-scroll">
+                <h2 class="welcome-title">ASSEMBLE YOUR TANK CREW</h2>
+                <div class="welcome-text">
+                    <p>Realm Wreckers is the chaotic co-op adventure where teamwork is your only weapon. <strong>One
+                            Tank, Three Roles.</strong></p>
+                    <p>Will you drive the beast, man the devastating main cannon, or pilot the drone to scout and
+                        support? Coordinate with your friends to crush hordes of goblins!</p>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1: The Gunner -->
+                <div class="feature-card fade-in-scroll">
+                    <div class="feature-video">
+                        <video class="feature-video-element" autoplay muted loop playsinline
+                            src="/videos/character video4.mp4"></video>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">MAN THE GUNS</h3>
+                        <p class="feature-description">Take control of the massive turret. Rain down explosive shells on
+                            goblin towers and clear the path for your team.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2: The Driver -->
+                <div class="feature-card fade-in-scroll delay-1">
+                    <div class="feature-video">
+                        <video class="feature-video-element" autoplay muted loop playsinline
+                            src="/videos/character video3.mp4"></video>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">DRIVE THE BEAST</h3>
+                        <p class="feature-description">Navigate treacherous terrain, smash through obstacles, and
+                            position the tank for the perfect shot. You are the team's legs.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3: The Pilot -->
+                <div class="feature-card fade-in-scroll delay-2">
+                    <div class="feature-video">
+                        <video class="feature-video-element" autoplay muted loop playsinline
+                            src="/videos/character video2.mp4"></video>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">SKY SUPPORT</h3>
+                        <p class="feature-description">Deploy the drone to scout ahead, hack enemy defenses, and drop
+                            supplies. Your intel keeps the tank alive.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section Merged into Welcome -->
+
+    <!-- Characters Section -->
+    <section id="characters" class="characters-section">
+        <div class="container">
+            <div class="section-divider fade-in-scroll">
+                <h2 class="divider-title">Meet the Characters</h2>
+            </div>
+
+            <div class="characters-content-wrapper">
+                <div class="left-character-list">
+                    <!-- Commander -->
+                    <div class="character-card active fade-in-scroll">
+                        <div class="card-glow"></div>
+                        <div class="character-img-container">
+                            <img src="/images/chars/commander.png" alt="Commander" class="character-portrait">
+                        </div>
+                        <h3 class="character-name">THE COMMANDER</h3>
+                        <div class="character-info">
+                            <p class="character-role">DRIVER & TACTICIAN</p>
+                            <p class="character-lore">
+                                The tactical brain. calls the shots, navigates terrain, and keeps the crew alive
+                                when chaos erupts.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Gunner -->
+                    <div class="character-card fade-in-scroll delay-2000">
+                        <div class="card-glow"></div>
+                        <div class="character-img-container">
+                            <img src="/images/chars/gunner.png" alt="Gunner" class="character-portrait">
+                        </div>
+                        <h3 class="character-name">THE GUNNER</h3>
+                        <div class="character-info">
+                            <p class="character-role">MAIN CANNON</p>
+                            <p class="character-lore">
+                                Precision meets devastation. Locked and loaded with heavy ordnance to turn
+                                goblin
+                                towers into dust.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Engineer -->
+                    <div class="character-card fade-in-scroll delay-4000">
+                        <div class="card-glow"></div>
+                        <div class="character-img-container">
+                            <img src="/images/chars/engineer.png" alt="Engineer" class="character-portrait">
+                        </div>
+                        <h3 class="character-name">THE ENGINEER</h3>
+                        <div class="character-info">
+                            <p class="character-role">SUPPORT & REPAIR</p>
+                            <p class="character-lore">
+                                Master of tech. Deploys drones for scouting and repairs the tank on the fly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sideline Video (Now on Right) -->
+                <div class="character-video-wrapper"> <!-- Removed fade-in-scroll to ensure visibility -->
+                    <div class="video-frame-styled" data-local-video="/videos/character_video1.mp4">
+                        <video class="char-featured-video" autoplay muted loop playsinline
+                            src="/videos/character_video1.mp4"></video>
+                        <div class="video-expand-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>Watch Fullscreen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collect/Craft Section -->
+    <section id="collect-craft" class="collect-craft-section">
+        <div class="slideshow-background">
+            <div class="slideshow-slide active" style="background-image: url('/images/bg_env_mining.webp')"></div>
+            <div class="slideshow-slide" style="background-image: url('/images/bg_env_workshop.webp')"></div>
+            <div class="slideshow-slide" style="background-image: url('/images/bg_env_ruins.webp')"></div>
+        </div>
+
+        <!-- Mountain SVG Divider Top -->
+        <div class="shape-divider shape-divider-top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path class="shape-fill" opacity="0.33"
+                    d="M473,67.3c-203.9,88.3-263.1-34-320.3,0C66,119.1,0,59.7,0,59.7V0h1000v59.7 c0,0-62.1,26.1-94.9,29.3c-32.8,3.3-62.8-12.3-75.8-22.1C806,49.6,745.3,8.7,694.9,4.7S492.4,59,473,67.3z" />
+                <path class="shape-fill" opacity="0.66"
+                    d="M734,67.3c-45.5,0-77.2-23.2-129.1-39.1c-28.6-8.7-150.3-10.1-254,39.1 s-91.7-34.4-149.2,0C115.7,118.3,0,39.8,0,39.8V0h1000v36.5c0,0-28.2-18.5-92.1-18.5C810.2,18.1,775.7,67.3,734,67.3z" />
+                <path class="shape-fill"
+                    d="M766.1,28.9c-200-57.5-266,65.5-395.1,19.5C242,1.8,242,5.4,184.8,20.6C128,35.8,132.3,44.9,89.9,52.5C28.6,63.7,0,0,0,0 h1000c0,0-9.9,40.9-83.6,48.1S829.6,47,766.1,28.9z" />
+            </svg>
+        </div>
+
+        <div class="collect-craft-content fade-in-scroll">
+            <h2 class="section-title">Collect, Craft, Explore</h2>
+            <div class="collect-craft-text">
+                <p>Collect all kinds of useful resources, and turn them into handy tools.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Gallery Section -->
+    <section id="media" class="media-section">
+        <div class="container">
+            <!-- Curve SVG Divider Top (Negative) -->
+            <div class="shape-divider shape-divider-top shape-negative">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path class="shape-fill"
+                        d="M500,97C126.7,96.3,0.8,19.8,0,0v100l1000,0V1C1000,19.4,873.3,97.8,500,97z" />
+                </svg>
+            </div>
+
+            <div class="section-divider fade-in-scroll">
+                <h2 class="divider-title">MEDIA</h2>
+            </div>
+
+            <div class="media-gallery fade-in-scroll">
+                <!-- Item 1: Menu/Crystals -->
+                <a href="/images/media/menu2.png" class="media-item anim-fade-left fade-in-scroll delay-400"
+                    data-lightbox="media-gallery">
+                    <img src="/images/media/menu2.png" alt="Crystal Cave">
+                    <div class="media-overlay"><i class="fas fa-search-plus"></i></div>
+                </a>
+
+                <!-- Item 2: Dungeon -->
+                <a href="/images/media/dungeon.png" class="media-item anim-fade-up fade-in-scroll delay-800"
+                    data-lightbox="media-gallery">
+                    <img src="/images/media/dungeon.png" alt="Dungeon Entrance">
+                    <div class="media-overlay"><i class="fas fa-search-plus"></i></div>
+                </a>
+
+                <!-- Item 3: Ruins -->
+                <!-- Item 3: Ruins (Removed - Missing File) -->
+                <!-- <a href="/images/media/0.png" class="media-item" data-lightbox="media-gallery">
+                    <img src="/images/media/0.png" alt="Ancient Ruins">
+                    <div class="media-overlay"><i class="fas fa-search-plus"></i></div>
+                </a> -->
+
+                <!-- Item 4: Boss Fight -->
+                <a href="/images/media/boss_fight.png" class="media-item anim-fade-right fade-in-scroll delay-1200"
+                    data-lightbox="media-gallery">
+                    <img src="/images/media/boss_fight.png" alt="Boss Fight">
+                    <div class="media-overlay"><i class="fas fa-search-plus"></i></div>
+                </a>
+
+                <!-- Item 5: Snow Level -->
+                <a href="/images/media/snow_level.png" class="media-item anim-fade-left fade-in-scroll delay-1600"
+                    data-lightbox="media-gallery">
+                    <img src="/images/media/snow_level.png" alt="Snow Level">
+                    <div class="media-overlay"><i class="fas fa-search-plus"></i></div>
+                </a>
+
+                <!-- Item 6: Desert Convoy -->
+                <a href="/images/media/desert_convoy.png" class="media-item anim-fade-up fade-in-scroll delay-2000"
+                    data-lightbox="media-gallery">
+                    <img src="/images/media/desert_convoy.png" alt="Desert Convoy">
+                    <div class="media-overlay"><i class="fas fa-search-plus"></i></div>
+                </a>
+
+                <!-- Item 7: Loot Room -->
+                <a href="/images/media/loot_room.png" class="media-item anim-fade-right fade-in-scroll delay-2400"
+                    data-lightbox="media-gallery">
+                    <img src="/images/media/loot_room.png" alt="Loot Room">
+                    <div class="media-overlay"><i class="fas fa-search-plus"></i></div>
+                </a>
+
+                <!-- Item 8: Victory -->
+                <a href="/images/media/victory.png" class="media-item anim-fade-left fade-in-scroll delay-2800"
+                    data-lightbox="media-gallery">
+                    <img src="/images/media/victory.png" alt="Victory">
+                    <div class="media-overlay"><i class="fas fa-search-plus"></i></div>
+                </a>
+
+                <!-- Item 8: Battle Scene Replacement -->
+                <a href="/images/media/media_tank_new_1.png" class="media-item anim-fade-up fade-in-scroll delay-3200"
+                    data-lightbox="media-gallery">
+                    <img src="/images/media/media_tank_new_1.png" alt="Epic Tank Battle">
+                    <div class="media-overlay"><i class="fas fa-search-plus"></i></div>
+                </a>
+
+                <!-- Item 10: Explore Ruins -->
+                <a href="/images/media/explore_ruins.png" class="media-item anim-fade-right fade-in-scroll delay-3600"
+                    data-lightbox="media-gallery">
+                    <img src="/images/media/explore_ruins.png" alt="Exploration">
+                    <div class="media-overlay"><i class="fas fa-search-plus"></i></div>
+                </a>
+
+                <!-- Item 11: Workshop -->
+                <a href="/images/media/workshop_view.png" class="media-item anim-fade-left fade-in-scroll delay-4000"
+                    data-lightbox="media-gallery">
+                    <img src="/images/media/workshop_view.png" alt="Workshop">
+                    <div class="media-overlay"><i class="fas fa-search-plus"></i></div>
+                </a>
+
+                <!-- Item 12: Mining -->
+                <a href="/images/media/mining_ops.png" class="media-item anim-fade-up fade-in-scroll delay-4400"
+                    data-lightbox="media-gallery">
+                    <img src="/images/media/mining_ops.png" alt="Mining">
+                    <div class="media-overlay"><i class="fas fa-search-plus"></i></div>
+                </a>
+                <!-- Item 13: New Tank Feature (Completing Grid) -->
+                <a href="/images/media/media_tank_new_2.png"
+                    class="media-item anim-fade-right fade-in-scroll delay-4800" data-lightbox="media-gallery">
+                    <img src="/images/media/media_tank_new_2.png" alt="Tank Workshop">
+                    <div class="media-overlay"><i class="fas fa-search-plus"></i></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community-section">
+        <div class="container">
+            <!-- Curve SVG Divider Top (Negative) -->
+            <div class="shape-divider shape-divider-top shape-negative">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path class="shape-fill"
+                        d="M500,97C126.7,96.3,0.8,19.8,0,0v100l1000,0V1C1000,19.4,873.3,97.8,500,97z" />
+                </svg>
+            </div>
+
+            <div class="community-split">
+                <!-- Left: Join Community -->
+                <div class="community-left">
+                    <h2 class="section-title anim-fade-right fade-in-scroll">JOIN THE COMMUNITY</h2>
+                    <p class="community-text anim-fade-right fade-in-scroll delay-200">We've got an incredible community
+                        spread all over the world, so why not
+                        join us! Join the discussion on Discord, show us your fan art, chat with us on Twitter and sign
+                        up for the official newsletter!</p>
+                    <div class="community-socials">
+                        <a href="https://www.youtube.com/@RW_BlueTeamGames" target="_blank"
+                            class="social-icon anim-icon-pop fade-in-scroll delay-400" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.reddit.com/user/Hopeful_Bat_4871/" target="_blank"
+                            class="social-icon anim-icon-pop fade-in-scroll delay-600" aria-label="Reddit">
+                            <i class="fab fa-reddit"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61582374455858" target="_blank"
+                            class="social-icon anim-icon-pop fade-in-scroll delay-800" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://x.com/RealmWreckers" target="_blank"
+                            class="social-icon anim-icon-pop fade-in-scroll delay-1000" aria-label="X (Twitter)">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@realmwreckers?lang=en" target="_blank"
+                            class="social-icon anim-icon-pop fade-in-scroll delay-1200" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.twitch.tv/realmwreckers" target="_blank"
+                            class="social-icon anim-icon-pop fade-in-scroll delay-1400" aria-label="Twitch">
+                            <i class="fab fa-twitch"></i>
+                        </a>
+                        <a href="https://discord.gg/BWcstjp9B6" target="_blank"
+                            class="social-icon anim-icon-pop fade-in-scroll delay-1600" aria-label="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Center: Community Text -->
+                <div class="community-characters" style="display: none;">
+                    <!-- Hidden legacy characters -->
+                </div>
+
+                <!-- Right: Wishlist -->
+                <div class="community-right">
+                    <h2 class="section-title anim-fade-left fade-in-scroll">Wishlist Realm Wreckers Now</h2>
+                    <p class="community-text anim-fade-left fade-in-scroll delay-200">Get ready to embark on an epic
+                        journey unlike any other. <strong>Realm
+                            Wreckers</strong> is currently in development for PC. Join our community, follow the
+                        progress, and be part of shaping the adventure.</p>
+                    <a href="https://store.steampowered.com/" target="_blank"
+                        class="btn btn-blue anim-fade-up fade-in-scroll delay-400">
+                        <i class="fab fa-steam"></i>
+                        <span>Wishlist now!</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mountain SVG Divider Bottom -->
+            <div class="shape-divider shape-divider-bottom">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path class="shape-fill" opacity="0.33"
+                        d="M473,67.3c-203.9,88.3-263.1-34-320.3,0C66,119.1,0,59.7,0,59.7V0h1000v59.7 c0,0-62.1,26.1-94.9,29.3c-32.8,3.3-62.8-12.3-75.8-22.1C806,49.6,745.3,8.7,694.9,4.7S492.4,59,473,67.3z" />
+                    <path class="shape-fill" opacity="0.66"
+                        d="M734,67.3c-45.5,0-77.2-23.2-129.1-39.1c-28.6-8.7-150.3-10.1-254,39.1 s-91.7-34.4-149.2,0C115.7,118.3,0,39.8,0,39.8V0h1000v36.5c0,0-28.2-18.5-92.1-18.5C810.2,18.1,775.7,67.3,734,67.3z" />
+                    <path class="shape-fill"
+                        d="M766.1,28.9c-200-57.5-266,65.5-395.1,19.5C242,1.8,242,5.4,184.8,20.6C128,35.8,132.3,44.9,89.9,52.5C28.6,63.7,0,0,0,0 h1000c0,0-9.9,40.9-83.6,48.1S829.6,47,766.1,28.9z" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-col brand-col anim-fade-up fade-in-scroll delay-200">
+                    <a href="/" class="footer-logo">
+                        <img src="/images/logo/realm_wreckers_logo.png" alt="Realm Wreckers" class="logo-img-sm">
+                    </a>
+                    <p class="footer-desc">Join the chaos. Command the tank. Wreck the realm.</p>
+                    <a href="mailto:info@realmwreckers.com" class="footer-email-link">
+                        <i class="fas fa-envelope"></i> info@realmwreckers.com
+                    </a>
+                </div>
+
+                <!-- Social Column -->
+                <div class="footer-col social-col anim-fade-up fade-in-scroll delay-400">
+                    <h3 class="footer-heading">JOIN THE FIGHT</h3>
+                    <div class="social-grid">
+                        <a href="https://discord.gg" target="_blank"
+                            class="social-btn discord anim-icon-pop fade-in-scroll delay-600"><i
+                                class="fab fa-discord"></i></a>
+                        <a href="https://twitter.com" target="_blank"
+                            class="social-btn twitter anim-icon-pop fade-in-scroll delay-800"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com" target="_blank"
+                            class="social-btn youtube anim-icon-pop fade-in-scroll delay-1000"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://tiktok.com" target="_blank"
+                            class="social-btn tiktok anim-icon-pop fade-in-scroll delay-1200"><i
+                                class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Legal Column -->
+                <div class="footer-col legal-col anim-fade-up fade-in-scroll delay-600">
+                    <h3 class="footer-heading">LEGAL</h3>
+                    <ul class="footer-links">
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms of Service</a></li>
+                        <li><a href="/cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <div class="copyright">Copyright &copy; 2026 Realm Wreckers. All rights reserved.</div>
+                <div class="disclaimer">
+                    Protected by reCAPTCHA. Google <a href="https://policies.google.com/privacy"
+                        target="_blank">Privacy</a> & <a href="https://policies.google.com/terms"
+                        target="_blank">Terms</a> apply.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <button class="lightbox-close" aria-label="Close lightbox">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="lightbox-content">
+            <iframe src="" class="lightbox-video" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <video class="lightbox-local-video" controls playsinline style="display: none;"></video>
+            <img src="" alt="Lightbox Image" class="lightbox-image" style="display: none;">
+
+            <button class="lightbox-prev" aria-label="Previous image">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="lightbox-next" aria-label="Next image">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
