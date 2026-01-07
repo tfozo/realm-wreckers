@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initVideoBackgrounds();
     initNewsletterForm();
     initCharacterHoverEffects();
+    initCharacterModels();
 });
 
 // Scroll Reveal Animation
@@ -622,4 +623,199 @@ function initCharacterHoverEffects() {
             card.classList.add('active');
         });
     });
+}
+
+// Character GLB lazy-load & inline preview
+function initCharacterModels() {
+    const characterCards = document.querySelectorAll('.character-card');
+    const modal = document.getElementById('model-modal');
+    const modalViewer = document.getElementById('model-modal-viewer');
+    const modalClose = document.querySelector('.model-modal-close');
+    const modalBackdrop = document.querySelector('.model-modal-backdrop');
+    const modalToggle = document.querySelector('.model-modal-toggle');
+    const modalLoading = document.querySelector('.model-modal-loading');
+    let currentCardData = null;
+    let modalPlaying = true;
+    let suppressClick = false;
+    let modalLastLoadedSrc = null;
+
+    if (!characterCards.length) return;
+
+    const openModal = (src, poster) => {
+        if (!modal || !modalViewer) return;
+        const willLoadNew = src && src !== modalLastLoadedSrc;
+        if (modalLoading) modalLoading.classList.toggle('visible', !!willLoadNew);
+        if (src) modalViewer.setAttribute('src', src);
+        if (poster) modalViewer.setAttribute('poster', poster);
+        modalViewer.removeAttribute('reveal');
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+        if (!modal || !modalViewer) return;
+        modal.classList.remove('active');
+        modalViewer.pause && modalViewer.pause();
+        if (modalLoading) modalLoading.classList.remove('visible');
+        document.body.style.overflow = '';
+    };
+
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    const setModalPlayState = (playing) => {
+        modalPlaying = playing;
+        if (!modalViewer) return;
+        if (playing) {
+            modalViewer.play?.();
+        } else {
+            modalViewer.pause?.();
+        }
+        if (modalToggle) {
+            modalToggle.dataset.mode = playing ? 'moving' : 'static';
+            modalToggle.textContent = playing ? 'Pause' : 'Play Walk';
+        }
+    };
+
+    if (modalViewer) {
+        modalViewer.addEventListener('load', () => {
+            console.debug('Modal model loaded', modalViewer.src);
+            if (modalLoading) modalLoading.classList.remove('visible');
+            modalLastLoadedSrc = modalViewer.src;
+            setModalPlayState(modalPlaying);
+        });
+        modalViewer.addEventListener('error', (err) => {
+            console.debug('Modal model error', err);
+            if (modalLoading) modalLoading.classList.remove('visible');
+        });
+    }
+
+    characterCards.forEach(card => {
+        const staticGlb = card.dataset.staticGlb;
+        const movingGlb = card.dataset.movingGlb;
+        const poster = card.dataset.poster;
+        const img = card.querySelector('.character-portrait');
+        const container = card.querySelector('.character-img-container');
+        let loadingEl = null;
+        let modelEl = null;
+        let modelLoaded = false;
+        let pointerDown = null;
+        let pointerMoved = false;
+
+        const ensureLoadingEl = () => {
+            if (!container) return;
+            if (loadingEl) return loadingEl;
+            loadingEl = document.createElement('div');
+            loadingEl.className = 'character-loading';
+            loadingEl.textContent = 'Loading...';
+            container.appendChild(loadingEl);
+            return loadingEl;
+        };
+
+        const showCardLoading = () => {
+            if (modelLoaded) {
+                hideCardLoading();
+                return;
+            }
+            const l = ensureLoadingEl();
+            if (l) l.classList.add('visible');
+        };
+
+        const hideCardLoading = () => {
+            if (loadingEl) loadingEl.classList.remove('visible');
+        };
+
+        const showModelPreview = () => {
+            const previewSrc = movingGlb || staticGlb;
+            if (!previewSrc || !container) return;
+
+            if (!modelEl) {
+                modelEl = document.createElement('model-viewer');
+                modelEl.className = 'character-model';
+                modelEl.setAttribute('src', previewSrc);
+                if (poster) modelEl.setAttribute('poster', poster);
+                modelEl.setAttribute('loading', 'lazy');
+                modelEl.setAttribute('reveal', 'auto');
+                modelEl.setAttribute('camera-controls', '');
+                modelEl.setAttribute('interaction-prompt', 'none');
+                modelEl.setAttribute('shadow-intensity', '0.8');
+                modelEl.style.display = 'none';
+                container.appendChild(modelEl);
+
+                modelEl.addEventListener('load', () => {
+                    console.debug('Card model loaded', previewSrc);
+                    modelLoaded = true;
+                    modelEl.pause?.();
+                    hideCardLoading();
+                });
+                modelEl.addEventListener('error', (err) => {
+                    console.debug('Card model error', err);
+                    hideCardLoading();
+                });
+            }
+
+            if (img) img.style.opacity = '0';
+            showCardLoading();
+            modelEl.style.display = 'block';
+        };
+
+        const hideModelPreview = () => {
+            if (img) img.style.opacity = '';
+            if (modelEl) modelEl.style.display = 'none';
+            hideCardLoading();
+        };
+
+        card.addEventListener('mouseenter', showModelPreview);
+        card.addEventListener('mouseleave', hideModelPreview);
+
+        card.addEventListener('pointerdown', (e) => {
+            pointerDown = { x: e.clientX, y: e.clientY };
+            pointerMoved = false;
+        });
+
+        card.addEventListener('pointermove', (e) => {
+            if (!pointerDown) return;
+            const dx = Math.abs(e.clientX - pointerDown.x);
+            const dy = Math.abs(e.clientY - pointerDown.y);
+            if (dx > 6 || dy > 6) {
+                pointerMoved = true;
+            }
+        });
+
+        card.addEventListener('pointerup', () => {
+            if (pointerMoved) {
+                suppressClick = true;
+                setTimeout(() => suppressClick = false, 50);
+            }
+            pointerDown = null;
+            pointerMoved = false;
+        });
+
+        card.addEventListener('click', () => {
+            if (suppressClick) return;
+            const targetSrc = movingGlb || staticGlb;
+            currentCardData = { staticGlb, movingGlb, poster };
+
+            if (modelEl) {
+                modelEl.setAttribute('src', targetSrc);
+                modelEl.style.display = 'block';
+            } else {
+                showModelPreview();
+            }
+
+            openModal(targetSrc, poster);
+            setModalPlayState(true);
+        });
+    });
+
+    if (modalToggle && modalViewer) {
+        modalToggle.addEventListener('click', () => {
+            if (!currentCardData) return;
+            const nextPlayState = !modalPlaying;
+            setModalPlayState(nextPlayState);
+        });
+    }
 }

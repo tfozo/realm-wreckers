@@ -12,6 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
 <body>
@@ -114,7 +115,7 @@
                 <h2 class="welcome-title">ASSEMBLE YOUR TANK CREW</h2>
                 <div class="welcome-text">
                     <p>Realm Wreckers is the chaotic co-op adventure where teamwork is your only weapon. <strong>One
-                            Tank, Three Roles.</strong></p>
+                            Tank, Many Roles.</strong></p>
                     <p>Will you drive the beast, man the devastating main cannon, or pilot the drone to scout and
                         support? Coordinate with your friends to crush hordes of goblins!</p>
                 </div>
@@ -178,67 +179,109 @@
 
             <div class="characters-content-wrapper">
                 <div class="left-character-list">
-                    <!-- Commander -->
-                    <div class="character-card active fade-in-scroll">
+                    <div class="character-card active fade-in-scroll"
+                        data-static-glb="/meshy/driver.glb"
+                        data-moving-glb="/meshy/driver-walking.glb"
+                        data-poster="/meshy/Image_driver.png">
                         <div class="card-glow"></div>
                         <div class="character-img-container">
-                            <img src="/images/chars/commander.png" alt="Commander" class="character-portrait">
+                            <img src="/meshy/Image_driver.png" alt="Driver" class="character-portrait">
                         </div>
-                        <h3 class="character-name">THE COMMANDER</h3>
+                        <h3 class="character-name">THE DRIVER</h3>
                         <div class="character-info">
-                            <p class="character-role">DRIVER & TACTICIAN</p>
+                            <p class="character-role">TANK COMMAND</p>
                             <p class="character-lore">
-                                The tactical brain. calls the shots, navigates terrain, and keeps the crew alive
-                                when chaos erupts.
+                                Keeps the beast rolling, thread by thread—reading terrain, juking ambushes, and lining up the kill shot.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Gunner -->
-                    <div class="character-card fade-in-scroll delay-2000">
+                    <div class="character-card fade-in-scroll delay-200"
+                        data-static-glb="/meshy/robot.glb"
+                        data-moving-glb="/meshy/robot-moving.glb"
+                        data-poster="/meshy/Image_robot.png">
                         <div class="card-glow"></div>
                         <div class="character-img-container">
-                            <img src="/images/chars/gunner.png" alt="Gunner" class="character-portrait">
+                            <img src="/meshy/Image_robot.png" alt="Robot" class="character-portrait">
                         </div>
-                        <h3 class="character-name">THE GUNNER</h3>
+                        <h3 class="character-name">THE ROBOT</h3>
                         <div class="character-info">
-                            <p class="character-role">MAIN CANNON</p>
+                            <p class="character-role">MECH ENFORCER</p>
                             <p class="character-lore">
-                                Precision meets devastation. Locked and loaded with heavy ordnance to turn
-                                goblin
-                                towers into dust.
+                                Steel fist and perfect aim. Stabilizes recoil and anchors the line when the swarm gets too close.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Engineer -->
-                    <div class="character-card fade-in-scroll delay-4000">
+                    <div class="character-card fade-in-scroll delay-400"
+                        data-static-glb="/meshy/gambler.glb"
+                        data-moving-glb="/meshy/gambler-moving.glb"
+                        data-poster="/meshy/Image_gambler.png">
                         <div class="card-glow"></div>
                         <div class="character-img-container">
-                            <img src="/images/chars/engineer.png" alt="Engineer" class="character-portrait">
+                            <img src="/meshy/Image_gambler.png" alt="Gambler" class="character-portrait">
+                        </div>
+                        <h3 class="character-name">THE GAMBLER</h3>
+                        <div class="character-info">
+                            <p class="character-role">WILDCARD DPS</p>
+                            <p class="character-lore">
+                                Trades luck for lethality. Stacks crits, calls risky plays, and cashes out when it matters.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="character-card fade-in-scroll delay-600"
+                        data-static-glb="/meshy/engineer.glb"
+                        data-moving-glb="/meshy/engineer-moving.glb"
+                        data-poster="/meshy/Image_engineer.png">
+                        <div class="card-glow"></div>
+                        <div class="character-img-container">
+                            <img src="/meshy/Image_engineer.png" alt="Engineer" class="character-portrait">
                         </div>
                         <h3 class="character-name">THE ENGINEER</h3>
                         <div class="character-info">
-                            <p class="character-role">SUPPORT & REPAIR</p>
+                            <p class="character-role">REPAIR & RIGS</p>
                             <p class="character-lore">
-                                Master of tech. Deploys drones for scouting and repairs the tank on the fly.
+                                Patch kits, turrets, and field fixes. Keeps the tank alive and the gadgets humming mid-firefight.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="character-card fade-in-scroll delay-800"
+                        data-static-glb="/meshy/drone-operator.glb"
+                        data-moving-glb="/meshy/drone-operator-moving.glb"
+                        data-poster="/meshy/Image_drone-operator.png">
+                        <div class="card-glow"></div>
+                        <div class="character-img-container">
+                            <img src="/meshy/Image_drone-operator.png" alt="Drone Operator" class="character-portrait">
+                        </div>
+                        <h3 class="character-name">THE DRONE OPER.</h3>
+                        <div class="character-info">
+                            <p class="character-role">RECON & HACKS</p>
+                            <p class="character-lore">
+                                Eyes in the sky. Scouts routes, disables defenses, and drops supplies right where the crew needs them.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="character-card fade-in-scroll delay-1000"
+                        data-static-glb="/meshy/sniper.glb"
+                        data-moving-glb="/meshy/sniper-moving.glb"
+                        data-poster="/meshy/Image_sniper.png">
+                        <div class="card-glow"></div>
+                        <div class="character-img-container">
+                            <img src="/meshy/Image_sniper.png" alt="Sniper" class="character-portrait">
+                        </div>
+                        <h3 class="character-name">THE SNIPER</h3>
+                        <div class="character-info">
+                            <p class="character-role">LONG-RANGE PICKOFF</p>
+                            <p class="character-lore">
+                                Pops threats before they reach the hull. Precision overwatch and clutch shots that break sieges.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Sideline Video (Now on Right) -->
-                <div class="character-video-wrapper"> <!-- Removed fade-in-scroll to ensure visibility -->
-                    <div class="video-frame-styled" data-youtube-id="mvOPtb_0kzk">
-                        <iframe class="char-featured-video"
-                            src="https://www.youtube.com/embed/mvOPtb_0kzk?autoplay=1&mute=1&loop=1&playlist=mvOPtb_0kzk&controls=0&modestbranding=1&rel=0"
-                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        <div class="video-expand-overlay">
-                            <i class="fas fa-expand"></i>
-                            <span>Watch Fullscreen</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -379,6 +422,22 @@
             </div>
         </div>
     </section>
+
+    <!-- Character Model Modal -->
+    <div id="model-modal" class="model-modal">
+        <div class="model-modal-backdrop"></div>
+        <div class="model-modal-body">
+            <div class="model-modal-controls">
+                <button class="model-modal-toggle" aria-label="Toggle walk animation">Play Walk</button>
+                <button class="model-modal-close" aria-label="Close model viewer">&times;</button>
+            </div>
+            <div class="model-modal-loading">Loading model...</div>
+            <model-viewer id="model-modal-viewer" class="model-modal-viewer"
+                camera-controls auto-rotate shadow-intensity="1" exposure="1"
+                loading="lazy">
+            </model-viewer>
+        </div>
+    </div>
 
     <!-- Community Section -->
     <section id="community" class="community-section">
