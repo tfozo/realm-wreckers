@@ -86,6 +86,20 @@ a {
 
 .logo-container {
     flex-shrink: 0;
+    position: relative;
+    padding: 10px 16px;
+}
+
+.logo-container::before {
+    content: "";
+    position: absolute;
+    inset: -18px;
+    background: rgba(0, 0, 0, 0.55);
+    filter: blur(18px);
+    opacity: 0.9;
+    pointer-events: none;
+    border-radius: 999px;
+    z-index: -1;
 }
 
 .logo-link {
